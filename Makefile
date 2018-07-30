@@ -12,7 +12,8 @@ linux: jogolib.so jogo
 
 jogolib.so:  $(SRC_DIR)/player.cpp
 	$(CC) $(CFLAGS) -fPIC -c $(SRC_DIR)/player.cpp -o $(OBJ_DIR)/player.o
-	$(CC) -shared -fPIC -o $(LIB_DIR)/$@ $(OBJ_DIR)/player.o
+	$(CC) $(CFLAGS) -fPIC -c $(SRC_DIR)/map.cpp -o $(OBJ_DIR)/map.o
+	$(CC) -shared -fPIC -o $(LIB_DIR)/$@ $(OBJ_DIR)/player.o $(OBJ_DIR)/map.o
 	@echo "+++[Biblioteca dinamica criada em $(LIB_DIR)/$@]+++"
 
 jogo:
