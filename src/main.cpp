@@ -1,17 +1,21 @@
 #include <iostream>
 #include "player.h"
 #include "map.h"
+#include "combat.h"
 
 int main(){
-	/*
+
 	Player eu(10,10,10,10);
-	Player vc;
+	Player vc(3,3,3,3);
 
-	eu.attack(&vc);
-	*/
+	eu.set_name("Cadu");
+	vc.set_name("John Wick");
+
+	Combat(&eu,&vc);
 
 
-	Map mesa(5,5);
-	mesa.init();
-	mesa.print();
+
+//	Map mesa(5,5);
+//	mesa.init();
+//	mesa.print();
 }

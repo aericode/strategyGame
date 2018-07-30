@@ -16,20 +16,24 @@ void Player::attack(Player* p){
 	int damage = attack_points - p->get_defense();
 	if (damage<0){
 		damage = 0;
-		std::cout<<"The enemy is too strong, it barely feels your attack"<<std::endl;
+		std::cout<<p->get_name()<<"'s defense is too strong! It barely feels "<<m_name<<" 's attack"<<std::endl;
 	}
 	p->take_damage(damage);
-	std::cout << "you dealt "<< damage << " damage to your enemy"<<std::endl;
+	std::cout << m_name<< " dealt "<< damage << " damage to " <<p->get_name() <<std::endl;
 }
 
 bool Player::is_dead(){
-	return(health_points==0);
+	return(health_points<=0);
 }
+
+void Player::set_name(std::string name){m_name = name;}
 
 void Player::set_health(int health){health_points=health;}
 void Player::set_attack(int attack){attack_points=attack;}
 void Player::set_defense(int defense){defense_points=defense;}
 void Player::set_speed(int speed){speed_points=speed;}
+
+std::string Player::get_name(){return m_name;}
 
 int Player::get_health(){return health_points;}
 int Player::get_attack(){return attack_points;}

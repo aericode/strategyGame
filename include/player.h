@@ -1,8 +1,11 @@
 #ifndef PLAYER
 #define PLAYER
+#include <string>
 
 class Player{
 private:
+	std::string m_name;
+
 	int speed_points;
 	int health_points;
 	int attack_points;
@@ -12,10 +15,14 @@ public:
 	Player(int health=5, int attack=5, int defense=5, int speed=5);
 
 	//getters & setters
+	void set_name(std::string);
+
 	void set_speed(int);
 	void set_health(int);
 	void set_attack(int);
 	void set_defense(int);
+
+	std::string get_name();
 
 	int get_speed();
 	int get_health();

@@ -13,12 +13,12 @@ linux: jogolib.so jogo
 jogolib.so:  $(SRC_DIR)/player.cpp
 	$(CC) $(CFLAGS) -fPIC -c $(SRC_DIR)/player.cpp -o $(OBJ_DIR)/player.o
 	$(CC) $(CFLAGS) -fPIC -c $(SRC_DIR)/map.cpp -o $(OBJ_DIR)/map.o
-	$(CC) -shared -fPIC -o $(LIB_DIR)/$@ $(OBJ_DIR)/player.o $(OBJ_DIR)/map.o
+	$(CC) $(CFLAGS) -fPIC -c $(SRC_DIR)/combat.cpp -o $(OBJ_DIR)/combat.o
+	$(CC) -shared -fPIC -o $(LIB_DIR)/$@ $(OBJ_DIR)/player.o $(OBJ_DIR)/map.o $(OBJ_DIR)/combat.o
 	@echo "+++[Biblioteca dinamica criada em $(LIB_DIR)/$@]+++"
 
 jogo:
 	$(CC) $(CFLAGS) $(SRC_DIR)/main.cpp $(LIB_DIR)/jogolib.so -o $(BIN_DIR)/$@
-	$(CC) -shared -fPIC -o $(LIB_DIR)/$@ $(OBJ_DIR)/player.o
 
 clean:
 	@echo "Removendo arquivos objeto e binarios"
