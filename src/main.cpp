@@ -6,7 +6,7 @@
 int main(){
 
 	Player eu(10,10,10,10);
-	Player vc(3,3,3,3);
+	Player vc(5,10,7,3);
 
 	eu.set_name("Cadu");
 	vc.set_name("John Wick");

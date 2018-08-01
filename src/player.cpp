@@ -14,9 +14,9 @@ void Player::take_damage(int damage){
 
 void Player::attack(Player* p){
 	int damage = attack_points - p->get_defense();
-	if (damage<0){
+	if (damage<=0){
 		damage = 0;
-		std::cout<<p->get_name()<<"'s defense is too strong! It barely feels "<<m_name<<" 's attack"<<std::endl;
+		std::cout<<p->get_name()<<"'s defense is too strong! It barely feels the attack. ";
 	}
 	p->take_damage(damage);
 	std::cout << m_name<< " dealt "<< damage << " damage to " <<p->get_name() <<std::endl;
