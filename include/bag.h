@@ -15,6 +15,8 @@ private:
 public:
 	Bag(unsigned int);
 
+	Bag(unsigned int, int*, int*);
+
 	void add_item(Item*, int);
 	void drop_item(int, int);
 	Item* get_item(int);
