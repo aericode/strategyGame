@@ -1,5 +1,6 @@
 #ifndef ITEM
 #define ITEM
+#include <list>
 
 struct StatusModification
 {
@@ -19,6 +20,8 @@ public:
 
 	StatusModification get_status_modification();
 	void set_status_modification(int, int);
+
+	static std::list<Item> generate_items(int, int);
 };
 
 #endif
