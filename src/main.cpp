@@ -15,16 +15,18 @@ int main(){
 
 	Combat(&eu,&vc);
 */
-int ids[] = {1,2,3,4,5,6};
-int qts[] = {1,1,1,1,1,1};
+//int ids[] = {1,2,3,4,5,6};
+//int qts[] = {1,1,1,1,1,1};
 
-Bag bog(15,ids,qts);
+//Bag bog(15,ids,qts);
 //Item espada(150);
 
+Player eu(10,10,10,10);
+eu.fabricate(1);
 
 
 //bog.add_item(&espada, 1);
-std::cout<<bog.pick_item(3)->get_item_id()<<std::endl;
+//std::cout<<bog.pick_item(3)->get_item_id()<<std::endl;
 
 
 //	Map mesa(5,5);

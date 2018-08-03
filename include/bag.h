@@ -13,7 +13,7 @@ private:
 	std::vector<slot> inside;
 	unsigned int size;
 public:
-	Bag(unsigned int);
+	Bag(unsigned int = 10);
 
 	Bag(unsigned int, int*, int*);
 

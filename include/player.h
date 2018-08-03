@@ -1,6 +1,7 @@
 #ifndef PLAYER
 #define PLAYER
 #include <string>
+#include "bag.h"
 
 class Player{
 private:
@@ -10,6 +11,8 @@ private:
 	int health_points;
 	int attack_points;
 	int defense_points;
+
+	Bag player_bag;
 public:
 	//constructor
 	Player(int health=5, int attack=5, int defense=5, int speed=5);
@@ -32,5 +35,8 @@ public:
 	void take_damage(int);
 	void attack(Player*);
 	bool is_dead();
+
+	void use_item(int);
+	void fabricate(int);
 };
 #endif

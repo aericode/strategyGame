@@ -32,6 +32,20 @@ void Bag::add_item(Item* item,int quantity){
 	inside.push_back(*add_me);
 }
 
+void Bag::drop_item(int item_id,int drop_quantity){
+	for(unsigned int i=0;i<inside.size();i++){
+		if(inside[i].stored->get_item_id() == item_id){
+			if(drop_quantity >= inside[i].quantity){
+				std::cout<<"Dropped " << inside[i].quantity <<' '<< item_id <<'s'<<std::endl;
+				inside.erase(inside.begin() + i);
+			} else {
+				std::cout<<"Dropped " << drop_quantity <<' '<< item_id <<'s'<<std::endl;
+				inside[i].quantity -= drop_quantity;
+			}
+		}
+	}
+}
+
 Item* Bag::get_item(int item_id){
 	for(unsigned int i=0;i<inside.size();i++){
 		if(inside[i].stored->get_item_id() == item_id)return inside[i].stored;
